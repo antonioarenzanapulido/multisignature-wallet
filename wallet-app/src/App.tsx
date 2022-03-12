@@ -32,16 +32,22 @@ function App() {
     init()
   }, [])
 
-  const createTransfer = (transfer: { amount: string; to: string; }) => {
-    wallet.methods
+  const createTransfer = async (transfer: { amount: string; to: string; }) => {
+    await wallet.methods
       .createTransfer(transfer.amount, transfer.to)
       .send({from: accounts[0]})
+    
+    const transfers = await wallet.methods.getTransfers().call();
+    setTransfers(transfers)
   }
 
-  const approveTransfer = (transferId: string) => {
-    wallet.methods
+  const approveTransfer = async (transferId: string) => {
+    await wallet.methods
       .approveTransfer(transferId)
       .send({from: accounts[0]})
+    
+    const transfers = await wallet.methods.getTransfers().call();
+    setTransfers(transfers)
   }
 
   if(
