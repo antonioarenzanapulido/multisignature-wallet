@@ -4,6 +4,7 @@ interface Transfer {
     to: string,
     approvals: string[]
     sent: boolean
+    approvers: string[]
 }
 
 export default Transfer

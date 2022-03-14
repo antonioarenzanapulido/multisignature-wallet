@@ -11,6 +11,7 @@ contract Wallet {
         address payable to;
         uint approvals;
         bool sent;
+        address[] approvers;
     }
 
     Transfer[] public transfers;
@@ -30,7 +31,8 @@ contract Wallet {
     }
 
     function createTransfer(uint amount, address payable to) external onlyApprover() {
-        transfers.push(Transfer(transfers.length, amount, to, 0, false));
+        address[] memory emptyAddressList;
+        transfers.push(Transfer(transfers.length, amount, to, 0, false, emptyAddressList));
     }
 
     function approveTransfer(uint id) external onlyApprover() {
@@ -39,7 +41,7 @@ contract Wallet {
 
         approvals[msg.sender][id] = true;
         transfers[id].approvals++;
-
+        transfers[id].approvers.push(msg.sender);
         if (transfers[id].approvals >= quorum) {
             transfers[id].sent = true;
             transfers[id].to.transfer(transfers[id].amount);

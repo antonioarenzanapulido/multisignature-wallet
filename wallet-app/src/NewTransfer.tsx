@@ -1,37 +1,51 @@
 import React from 'react';
+import { Button, FormControl, FormLabel, Input, Text, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, Box } from '@chakra-ui/react'
 
-function NewTransfer({createTransfer} : {createTransfer: Function}) {
-    const [transfer, setTransfer] = React.useState({})
+function NewTransfer({ createTransfer, enabled }: { createTransfer: Function, enabled: boolean }) {
+    const [transfer, setTransfer] = React.useState({ to: '', amount: '' })
 
     const updateTransfer = (e: React.ChangeEvent<HTMLInputElement>, field: string) => {
-        const value =  e.target.value
-        setTransfer({...transfer, [field]: value})
+        const value = e.target.value
+        setTransfer({ ...transfer, [field]: value })
     }
 
-    const submit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
+    const submit = () => {
         createTransfer(transfer)
     }
 
     return (
-        <header>
-            <h2>Create transfer</h2>
-            <form onSubmit={(e) => submit(e)}>
-                <label htmlFor="amount">To</label>
-                <input
-                    id="to"
-                    type="text"
+        <Box  p={4}
+        borderWidth='1px'
+        borderRadius='lg' bg="white">
+            <Text fontSize='xl'>Create transfer</Text>
+            <Box as="form">
+
+                <FormLabel mt={4} htmlFor='address'>Address</FormLabel>
+                <Input 
+                    id='address' 
+                    placeholder='KETH address'
                     onChange={(e) => updateTransfer(e, 'to')}
                 />
-                <label htmlFor="amount">Amount</label>
-                <input
-                    id="amount"
-                    type="text"
-                    onChange={(e) => updateTransfer(e, 'amount')}
-                />
-                <button>Submit</button>
-            </form>
-        </header>
+
+                <FormLabel mt={4} htmlFor='amount'>Amount</FormLabel>
+                <NumberInput>
+                    <NumberInputField
+                        id='amount'
+                        placeholder='Amount to send'
+                        onChange={(e) => updateTransfer(e, 'amount')} 
+                    />
+                    <NumberInputStepper>
+                        <NumberIncrementStepper />
+                        <NumberDecrementStepper />
+                    </NumberInputStepper>
+                </NumberInput>
+
+
+                <Button mt={4} colorScheme='teal' size='md' isDisabled={!enabled} onClick={() => submit()}>
+                    Button
+                </Button>
+            </Box>
+        </Box>
     )
 }
 

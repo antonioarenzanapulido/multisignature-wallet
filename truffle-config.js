@@ -42,14 +42,6 @@ module.exports = {
   networks: {
      kovan: {
        provider: () =>
-      // This Accounts shouldn't be used, your ethers may be stolen as private keys are public
-      // Alternative may be using a json file
-      //
-      // Here you have to code to do that:
-      //const fs = require('fs');
-      //const secrets = JSON.parse(
-      //  fs.readFileSync('.secrets.json').toString().trim()
-      //)
         new provider(
           [
             '9907cdcefc64d78f7e48d87577e2824f158c192007d6a03ede71b6e73d8f04ab',
@@ -60,7 +52,7 @@ module.exports = {
           0,
           3
         ),
-        network_id: 42
+        network_id: 42,
      }
   },
 
