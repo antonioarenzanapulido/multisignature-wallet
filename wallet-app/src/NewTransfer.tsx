@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, FormControl, FormLabel, Input, Text, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, Box } from '@chakra-ui/react'
+import { Button, FormLabel, Input, Text, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, Box } from '@chakra-ui/react'
 
 function NewTransfer({ createTransfer, enabled }: { createTransfer: Function, enabled: boolean }) {
     const [transfer, setTransfer] = React.useState({ to: '', amount: '' })

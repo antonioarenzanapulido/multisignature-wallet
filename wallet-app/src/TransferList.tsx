@@ -1,4 +1,4 @@
-import { Box, Table, TableCaption, Td, Text, Th, Thead, Tr, Tbody, Button } from '@chakra-ui/react';
+import { Box, Table, Td, Text, Th, Thead, Tr, Tbody, Button } from '@chakra-ui/react';
 import React from 'react';
 import Transfer from './types/Transfer';
 
