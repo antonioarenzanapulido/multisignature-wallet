@@ -1,5 +1,8 @@
 # Multisignature Wallet
 
+![Multisignature wallet](https://i.imgur.com/yJvTAnY.png)
+
+
 https://silly-mclean-691ca5.netlify.app/
 
 ## Summary
@@ -23,9 +26,8 @@ Proyect deployed on Kovan network, this smart contract is able to send transfer 
 ## How to use the project
 
 **These are the private keys of the members of the contract import them to Metamask to interact with the smart contract** 
-**All the accounts should have around 1 KETH**
 
-![alt text](https://imgur.com/a/NAjVBpv)
+![Import account](https://i.imgur.com/vz148RV.png)
 
 9907cdcefc64d78f7e48d87577e2824f158c192007d6a03ede71b6e73d8f04ab
 63a98c95d6f9920f132c40b5997037c56e66f718022fdff97a6d5bfba43b6177
@@ -36,17 +38,17 @@ Proyect deployed on Kovan network, this smart contract is able to send transfer 
 Go to https://silly-mclean-691ca5.netlify.app/
 
 1 - Connect with metamask after import private key from one of the accounts
-![alt text](https://imgur.com/a/B7Ea5gV)
+![Connect metamask](https://i.imgur.com/9VIMuKy.png)
 
 2 - Create a transfer to an KETH address of your choice
-![alt text](https://imgur.com/a/NlM3fxD)
+![Create transfer](https://i.imgur.com/CLYM81l.png)
 
-3 - Approve it
-![alt text](https://imgur.com/a/NHTuhnE)
+3 - Approve transfer
+![Approve transfer](https://i.imgur.com/DKWpPUi.png)
 
 4 - Connect with another of the accounts and approve transfer
-![alt text](https://imgur.com/a/Wh124uR)
+![Connect with another account](https://i.imgur.com/gcWDdmT.png)
 
 5 - Done, your transfer have been sent
-![alt text](ttps://imgur.com/a/RG2Lao4)
+![Transfer sent](https://i.imgur.com/5D2smDx.png)
 
